@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="3225cceb-09b5-4066-bbb9-4ce97e1f6b3e" name="UMLUseCaseDiagram1" linkedPackageId="83190349-aabe-47a1-bba2-e8c4a492d937" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="ad103906-4277-4cdd-a0d1-1093b34674c9">
+      <elementDefinition Id="bad953ed-2b2e-4e5e-a111-b2eb8995009c" />
+      <body>After Browsing through the items the consumer can add their desired items into their cart which show the total price of the items after tax and shipping fees. After viewing their cart they can either purchase the items or remove the items.</body>
+      <annotatedElements>
+        <useCaseMoniker Id="27df3e82-0bfd-4699-9990-e9697b365796" LastKnownName="Add Items" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="4f67081f-ab81-4d19-861c-d361fc28a534">
+      <profileInstance Id="e94ba49b-c392-40b6-acad-e99a6ed22f88" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="52a25608-fcc8-41cc-a0ff-b91a58ed0ce3">
+      <profileInstance Id="3768215c-1b96-413a-8ddf-ff8ac8f4c5cc" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="bbdb7895-2f11-41c5-8295-f06f2e68c513" name="Luxury Online Shopping App" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7187e5a7-03ab-4865-8374-b336638e4a4f" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="2e82a176-0280-4050-a32a-59559e61bc9a" name="Browse Items" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ea4e70f9-cc2b-4577-8af7-4fe1698c70a3" />
+        <extendedCases>
+          <extend Id="ab17c535-bfd1-4c4d-b0f9-4ba3f2fe5de8">
+            <useCaseMoniker Id="27df3e82-0bfd-4699-9990-e9697b365796" LastKnownName="Add Items" />
+            <elementDefinition Id="107b0c57-a8fb-48dc-a888-cf0c30e2f0d6" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="bbdb7895-2f11-41c5-8295-f06f2e68c513" LastKnownName="Luxury Online Shopping App" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="3991dca9-aef1-4e8a-ba13-9a3daa93e13f" name="Purchase Items" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="01d6db48-1f0a-4f5b-8b95-b54af8ebfe99" />
+        <suppliersInternal>
+          <dependency Id="d5b2066c-9979-42a6-b1ba-e6fc9efe80a4">
+            <useCaseMoniker Id="27df3e82-0bfd-4699-9990-e9697b365796" LastKnownName="Add Items" />
+            <elementDefinition Id="99842ba7-e174-48d2-94d5-bcd1f30c0e7d" />
+          </dependency>
+        </suppliersInternal>
+        <additions>
+          <include Id="09883dba-8661-4821-8573-f3d4cf9318d4">
+            <useCaseMoniker Id="1caa3cb5-ed45-427a-ae73-6a55568834f6" LastKnownName="Track Items" />
+            <elementDefinition Id="f5c0e1df-4d98-47e4-96a8-479986394676" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="bbdb7895-2f11-41c5-8295-f06f2e68c513" LastKnownName="Luxury Online Shopping App" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="12e2288d-2965-4b48-9f9d-52b0ebaeb79e" name="Ship Items" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="916a9914-46be-429e-bd07-4f0e4b1c4201" />
+        <suppliersInternal>
+          <dependency Id="133f5d69-e5fa-489a-8751-96e8781a1578">
+            <useCaseMoniker Id="3991dca9-aef1-4e8a-ba13-9a3daa93e13f" LastKnownName="Purchase Items" />
+            <elementDefinition Id="0fd01e2e-bcf8-4890-82ae-081f3820e786" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="bbdb7895-2f11-41c5-8295-f06f2e68c513" LastKnownName="Luxury Online Shopping App" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="27df3e82-0bfd-4699-9990-e9697b365796" name="Add Items" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c01fa686-ef78-44b8-958a-e95f36f1df22" />
+        <subjects>
+          <subsystemMoniker Id="bbdb7895-2f11-41c5-8295-f06f2e68c513" LastKnownName="Luxury Online Shopping App" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="4ee93ba3-82be-4c93-9fc0-e9cfdfd1a384" name="Remove Items" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e6278492-be92-4d8e-9ac4-b030e147a232" />
+        <suppliersInternal>
+          <dependency Id="a2d992d9-c962-4b97-aae5-529f0ac46018">
+            <useCaseMoniker Id="27df3e82-0bfd-4699-9990-e9697b365796" LastKnownName="Add Items" />
+            <elementDefinition Id="b9a8ce57-8615-47ee-8ebb-6061f23a03be" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="bbdb7895-2f11-41c5-8295-f06f2e68c513" LastKnownName="Luxury Online Shopping App" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="1caa3cb5-ed45-427a-ae73-6a55568834f6" name="Track Items" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d68aeaf0-b049-481f-b1ff-781d9a3899e8" />
+        <subjects>
+          <subsystemMoniker Id="bbdb7895-2f11-41c5-8295-f06f2e68c513" LastKnownName="Luxury Online Shopping App" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <actor Id="1a93cd0e-b39a-4d5f-9b44-7fdf038dc75f" name="Consumer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9ea61920-6264-41b4-96e7-ea01999df14e" />
+        <targetEnds>
+          <association Id="b4c17da3-1b71-4b83-9b16-03656011046d" isDerived="false" sourceEndRoleName="Consumer" targetEndRoleName="Browse Items" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="2e82a176-0280-4050-a32a-59559e61bc9a" LastKnownName="Browse Items" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cd5d8155-55ec-4a3d-8056-e0a3f61e857f" name="Consumer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="54e108fc-7897-476d-b717-26d5978dc00e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="be98c318-b1d0-484a-8373-24f71e3d730c" name="Browse Items" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="755fbc12-b871-4974-b976-c899dfb98cde" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="56b0327f-65d5-4b6f-bf53-dd7819e9cb25" />
+          </association>
+          <association Id="a9f6ba10-9668-45d0-9cc6-75d6233fe44f" isDerived="false" sourceEndRoleName="Consumer" targetEndRoleName="Add Items" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="27df3e82-0bfd-4699-9990-e9697b365796" LastKnownName="Add Items" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4010c63c-d392-49a2-b12d-eb3a8acf95e6" name="Consumer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="19217e0f-f3a0-47a0-a691-ea3e811cb01c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5655f7da-56a2-4fb6-a9fe-b10b9c2b12ac" name="Add Items" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9da46e2f-4d38-41d4-b002-a60bf493aa6d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="03226747-25da-491b-8203-0fb14864e899" />
+          </association>
+          <association Id="d56cc4ed-7bcb-49e9-8d2c-819dfe5a6f4a" isDerived="false" sourceEndRoleName="Consumer" targetEndRoleName="Purchase Item" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="3991dca9-aef1-4e8a-ba13-9a3daa93e13f" LastKnownName="Purchase Items" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cc5df0fe-91cb-4fdc-9f86-a87ac4f447d2" name="Consumer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3e20b999-77b7-4f9f-9d24-75c766efaf52" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1e6cd245-6b75-4700-a80c-5eef6416b8a0" name="Purchase Item" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="36ae90f4-f7b9-4c88-8b68-ecc393d37f62" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b76ea5dd-e36a-4dc1-85a3-71f08b329b31" />
+          </association>
+          <association Id="2ced6876-4aa7-43ff-b0a4-072a11130d2e" isDerived="false" sourceEndRoleName="Consumer" targetEndRoleName="Track Item" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="1caa3cb5-ed45-427a-ae73-6a55568834f6" LastKnownName="Track Items" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e1717652-10c2-4998-84a5-2b1999ddeb9f" name="Consumer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c67ccb51-451d-49a3-b119-299abb7dc557" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f88261e8-4da3-42e7-976b-f0f843dc7254" name="Track Item" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a138015f-b826-45b4-a88c-8b1a04f87ba2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f5bc1478-390f-4df4-ae08-cea86219821e" />
+          </association>
+          <association Id="7ef76f2b-6c01-4256-a26c-14dda4cafc5b" isDerived="false" sourceEndRoleName="Consumer" targetEndRoleName="Remove Items" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="4ee93ba3-82be-4c93-9fc0-e9cfdfd1a384" LastKnownName="Remove Items" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b98b6a0a-4788-4477-b941-8527dc9d5902" name="Consumer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d915bd47-7746-44a6-b371-6786e0632f27" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fc8eb13e-c386-4e50-b309-74d27a40778a" name="Remove Items" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4810ecce-4625-4dce-b3ab-aa094b36e0e8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0dff8847-1be8-45f4-b825-8d09e909cfd6" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="36c15108-e109-40d9-9fd7-a168d4f9d4f9" name="Supplier" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="eeb11ffa-9006-4691-8641-b24fb4b87350" />
+        <targetEnds>
+          <association Id="790c1e23-5442-46f9-a5c2-18f3dab253eb" isDerived="false" sourceEndRoleName="Supplier" targetEndRoleName="Browse Items" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="2e82a176-0280-4050-a32a-59559e61bc9a" LastKnownName="Browse Items" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4152b0c2-db1b-4111-b064-480e56bfdd76" name="Supplier" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3cdcf416-b4af-4ea3-b9e7-0230db2e863c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ca02fe76-0f73-453e-8732-28f0a6722abb" name="Browse Items" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="87af2c50-43d0-4ad4-873f-be458d6a1b68" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a952a95e-4bb8-4e54-a95b-c01b35631f83" />
+          </association>
+          <association Id="b37d7fd4-3da5-4ee5-9607-9a0f649a4893" isDerived="false" sourceEndRoleName="Supplier" targetEndRoleName="Ship Item" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="12e2288d-2965-4b48-9f9d-52b0ebaeb79e" LastKnownName="Ship Items" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cac3a036-eee5-4f42-b885-b7394b7f9344" name="Supplier" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="78b571bb-da5c-4ccb-bacb-e6c4a6d7836b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c8668b92-4158-4218-816d-38e64cf5b9e4" name="Ship Item" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="58db78c5-2390-4065-9018-54a402c2af49" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a6b0a0a4-24bc-4c2c-a344-a28d420944a6" />
+          </association>
+          <association Id="3abe9bf3-74f2-421f-9f9e-e1f4b813a179" isDerived="false" sourceEndRoleName="Supplier" targetEndRoleName="Track Item" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="1caa3cb5-ed45-427a-ae73-6a55568834f6" LastKnownName="Track Items" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0cf8dd2a-a7c8-4e80-9edb-f97b6d88d132" name="Supplier" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="465321e3-dd42-449c-b851-4f53b620eb00" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="599767ac-b5b1-4fff-8186-433867f51427" name="Track Item" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9b84a915-7499-4057-82b4-33f176d4dd64" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="36d47124-7e21-4ed5-9c34-0dc9c257bbce" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="83190349-aabe-47a1-bba2-e8c4a492d937" name="Usecase">
+    <elementDefinition Id="94aad7c0-15c6-4fb8-b7c3-5e57a0537cd4" />
+  </package>
+</useCaseModelRoot>
